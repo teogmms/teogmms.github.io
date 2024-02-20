@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Teo Gil Moreno de Mora Sardà </title>
+	<meta charset = utf-8>
+	<script>
+		/* Here we define the data */
+		const RESEARCH = [{
+			innerHTML: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>With F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
+		}];
+		const CONFERENCE_TALKS = [{
+			date: 'November 2023',
+			innerHTML: "<a href='https://femmes-et-maths.fr/enseignement-superieur-et-recherche/forum-des-jeunes-mathematiciennes/forum-2023/'>Forum des jeunes mathématicien·nes</a>, Université Libre de Bruxelles, Belgium.",
+		}, {
+			date: 'May 2023',
+			innerHTML: "<a href='https://indico.math.cnrs.fr/event/9872/overview'>Journées des Doctorants du LAMA</a>, Université Gustave Eiffel and Université Paris-Est Créteil, France.",
+		}];
+		const SEMINAR_TALKS = [{
+			date: 'April 2024 (upcoming)',
+			innerHTML: "<a href='https://fanoni.perso.math.cnrs.fr/colloque.html'>Colloque de Géométrie</a>, Université Paris-Est Créteil, France",
+		}, {
+			date: 'June 2023',
+			innerHTML: "<a href='https://www.ub.edu/simba/index.html'>Seminari Informal de Matemàtiques de Barcelona</a>, Universitat de Barcelona, Spain.",
+		}, {
+			date: 'March 2023',
+			innerHTML: "Seminari de Geometria, Universitat Autònoma de Barcelona, Spain.",
+		}];
+	</script>
+	<style>
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: medium;
+			text-align: justify;
+			background-color: rgb(255, 255, 255);
+		}
+		h1 {
+			text-align: center;
+		}
+		td {
+			text-align: left;
+			vertical-align: baseline;
+		}
+
+		button.navigationButton {
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: medium;
+			border: 0;
+		}
+		button.navigationButton.Current {
+			background-color: beige;
+			font-weight: bolder;
+		}
+
+		section.navigationPage {
+			margin-left: 3%;
+			margin-right: 3%;
+		}
+		
+		td.cvListKey {
+			width: 17%;
+		}
+		td.cvListKeyLong {
+			width: 38%;
+		}
+		td.cvListDescription {
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+
+<section id="navigator-controller">
+	<h1> Teo Gil Moreno de Mora Sardà </h1>
+	<p> En construction </p>
+	<table style="width: 100%">
+		<td style="text-align: left;">
+			<strong>Laboratoire d'Analyse et de Mathématiques Appliquées</strong><br>
+			Université Paris-Est Créteil<br>
+			61 avenue du Général de Gaulle<br>
+			94010 Créteil<br>
+			France
+		</td>
+		<td style="text-align: right;">
+			<strong>Departament de Matemàtiques</strong><br>
+			Universitat de Barcelona<br>
+			Facultat de Ciències<br>
+			08193 Bellaterra<br>
+			Spain
+		</td>
+	</table>
+	<div style="text-align: center;">
+		<button class="navigationButton"
+			id="homeNavigationButton"
+			onclick="navigateToPage(0)"
+			title="Home page"
+		>Home</button>
+		<button class="navigationButton"
+			id="researchNavigationButton"
+			onclick="navigateToPage(1)"
+			title="Research history (published papers and contributions)"
+		>Research</button>
+		<button class="navigationButton"
+			id="eventsNavigationButton"
+			onclick="navigateToPage(2)"
+			title="bla bla bla"
+		>Events</button>
+		<button class="navigationButton"
+			id="talksNavigationButton"
+			onclick="navigateToPage(3)"
+			title="bla bla bla"
+		>Talks</button>
+	</div>
+	<script>
+		function navigateToPage(clickedIdx) {
+			const format = (pageId, buttonId, active) => {
+				document.getElementById(pageId).hidden = !active;
+				const button = document.getElementById(buttonId);
+				if (button) {
+					button.className = "navigationButton" + (active ? " Current" : "");
+				}
+			}
+			format("placeholderPage", null, false);
+			format("homePage", "homeNavigationButton", clickedIdx === 0);
+			format("researchPage", "researchNavigationButton", clickedIdx === 1);
+			format("eventsPage", "eventsNavigationButton", clickedIdx === 2);
+			format("talksPage", "talksNavigationButton", clickedIdx === 3);
+		};
+	</script>
+</section>
+
+
+<section id="placeholderPage" class="navigationPage">
+	<i>Loading content...</i>
+</section>
+
+<section id="homePage" class="navigationPage" hidden>
+	<h2>About me</h2>
+	I am a second year PhD student at Laboratoire d'Analyse et de Mathématiques Appliquées at Université Paris-Est Créteil and at the Universitat Autònoma de Barcelona, under the supervision of Stéphane Sabourau and Florent Balacheff.
+</section>
+
+<section id="researchPage" class="navigationPage" hidden>
+	<h2>Research page</h2>
+	<table id="researchContentTable"></table>
+	<script>
+		function renderResearch (items) {
+			const target = document.getElementById("researchContentTable");
+			items.forEach(({ innerHTML }, idx) => {
+				const row = document.createElement('tr');
+				const col0 = document.createElement('td', {
+					className: 'cvListKey',
+				});
+				col0.innerHTML = `[${idx+1}]`;
+				row.appendChild(col0);
+				const col1 = document.createElement('td', {
+					className: 'cvListDescription',
+				});
+				col1.innerHTML = innerHTML;				
+				row.appendChild(col1);
+				target.appendChild(row);
+			});
+		};
+	</script>
+</section>
+
+<section id="eventsPage" class="navigationPage" hidden>
+	<h2>Events page</h2>
+	Together with Nolwenn Le Quellec and Quentin Rible, we organise the 
+	<a href='http://lama.u-pem.fr/evenements/seminaire/seminaire_des_doctorants'>
+	Séminaire des doctorants du LAMA</a>, a monthly seminar aimed at LAMA's PhD
+	students.
+</section>
+
+<section id="talksPage" class="navigationPage" hidden>
+	<h2>Talks page</h2>
+	<h3>Talks in conferences</h3>
+	<table id="talksInConferencesList"></table>
+	<h3>Seminar talks</h3>
+	<table id="talksInSeminarList"></table>
+	<script>
+		function renderTalks(inConferences, inSeminar) {
+
+			const renderList = (target, items) => {
+				items.forEach(({ date, innerHTML }, idx) => {
+					const row = document.createElement('tr');
+					const col0 = document.createElement('td');
+					col0.className = 'cvListKey Long';
+					//const upcoming = (new Date(date)) > Date.now();
+					col0.innerHTML = date; // + (upcoming ? " (upcoming)" : "");
+					row.appendChild(col0);
+					const col1 = document.createElement('td');
+					col1.className = 'cvListDescription';
+					col1.innerHTML = innerHTML;				
+					row.appendChild(col1);
+					target.appendChild(row);
+				});
+			};
+
+			renderList(
+				document.getElementById("talksInConferencesList"),
+				inConferences,
+			);
+			renderList(
+				document.getElementById("talksInSeminarList"),
+				inSeminar,
+			);
+		};
+	</script>
+</section>
+
+<script>
+	/* load and render everything and go to homepage */
+	renderResearch(RESEARCH);
+	renderTalks(CONFERENCE_TALKS, SEMINAR_TALKS);
+	navigateToPage(0);
+</script>
+
+</body>
+</html>
