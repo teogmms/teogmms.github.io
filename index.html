@@ -5,146 +5,491 @@
 	<meta charset = utf-8>
 	<script>
 		/* Here we define the data */
+
 		const RESEARCH = [{
-			innerHTML: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>With F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
+			innerHTML: {
+				en: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>With F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
+				fr: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>With F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
+				cat: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>With F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
+			},
 		}];
+
 		const CONFERENCE_TALKS = [{
-			date: 'November 2023',
-			innerHTML: "<a href='https://femmes-et-maths.fr/enseignement-superieur-et-recherche/forum-des-jeunes-mathematiciennes/forum-2023/'>Forum des jeunes mathématicien·nes</a>, Université Libre de Bruxelles, Belgium.",
+			date: {
+				en: 'November 2023',
+				fr: "Novembre 2023",
+				cat: "Novembre 2023",
+			},
+			dateKey: '2023 Nov 23',
+			innerHTML: {
+				en: "<a href='https://femmes-et-maths.fr/enseignement-superieur-et-recherche/forum-des-jeunes-mathematiciennes/forum-2023/'>Forum des jeunes mathématicien·nes</a>, Université Libre de Bruxelles, Belgium.",
+				fr: "<a href='https://femmes-et-maths.fr/enseignement-superieur-et-recherche/forum-des-jeunes-mathematiciennes/forum-2023/'>Forum des jeunes mathématicien·nes</a>, Université Libre de Bruxelles, Belgique.",
+				cat: "<a href='https://femmes-et-maths.fr/enseignement-superieur-et-recherche/forum-des-jeunes-mathematiciennes/forum-2023/'>Forum des jeunes mathématicien·nes</a>, Université Libre de Bruxelles, Bèlgica.",
+			}
 		}, {
-			date: 'May 2023',
-			innerHTML: "<a href='https://indico.math.cnrs.fr/event/9872/overview'>Journées des Doctorants du LAMA</a>, Université Gustave Eiffel and Université Paris-Est Créteil, France.",
+			date: {
+				en: 'May 2023',
+				fr: "Mai 2023",
+				cat: "Maig 2023",
+			},
+			dateKey: '2023 May 15',
+			innerHTML: {
+				en: "<a href='https://indico.math.cnrs.fr/event/9872/overview'>Journées des Doctorants du LAMA</a>, Université Gustave Eiffel and Université Paris-Est Créteil, France.",
+				fr: "<a href='https://indico.math.cnrs.fr/event/9872/overview'>Journées des Doctorants du LAMA</a>, Université Gustave Eiffel and Université Paris-Est Créteil, France.",
+				cat: "<a href='https://indico.math.cnrs.fr/event/9872/overview'>Journées des Doctorants du LAMA</a>, Université Gustave Eiffel and Université Paris-Est Créteil, França.",
+			},
 		}];
+
 		const SEMINAR_TALKS = [{
-			date: 'April 2024 (upcoming)',
-			innerHTML: "<a href='https://fanoni.perso.math.cnrs.fr/colloque.html'>Colloque de Géométrie</a>, Université Paris-Est Créteil, France",
+			date: {
+				en: 'April 2024',
+				fr: 'Avril 2024',
+				cat: 'Abril 2024',
+			},
+			dateKey: '2024 Apr 05',
+			innerHTML: {
+				en: "<a href='https://fanoni.perso.math.cnrs.fr/colloque.html'>Colloque de Géométrie</a>, Université Paris-Est Créteil, France",
+				fr: "<a href='https://fanoni.perso.math.cnrs.fr/colloque.html'>Colloque de Géométrie</a>, Université Paris-Est Créteil, France",
+				cat: "<a href='https://fanoni.perso.math.cnrs.fr/colloque.html'>Colloque de Géométrie</a>, Université Paris-Est Créteil, França",
+			},
 		}, {
-			date: 'June 2023',
-			innerHTML: "<a href='https://www.ub.edu/simba/index.html'>Seminari Informal de Matemàtiques de Barcelona</a>, Universitat de Barcelona, Spain.",
+			date: {
+				en: 'June 2023',
+				fr: 'Juin 2023',
+				cat: 'Juny 2023',
+			},
+			dateKey: '2023 Jun 21',
+			innerHTML: {
+				en: "<a href='https://www.ub.edu/simba/index.html'>Seminari Informal de Matemàtiques de Barcelona</a>, Universitat de Barcelona, Spain.",
+				fr: "<a href='https://www.ub.edu/simba/index.html'>Seminari Informal de Matemàtiques de Barcelona</a>, Universitat de Barcelona, Espagne.",
+				cat: "<a href='https://www.ub.edu/simba/index.html'>Seminari Informal de Matemàtiques de Barcelona</a>, Universitat de Barcelona, Espanya.",
+			},
 		}, {
-			date: 'March 2023',
-			innerHTML: "Seminari de Geometria, Universitat Autònoma de Barcelona, Spain.",
+			date: {
+				en: 'March 2023',
+				fr: 'Mars 2023',
+				cat: 'Març 2023',
+			},
+			dateKey: '2023 Mar 02',
+			innerHTML: {
+				en: "Seminari de Geometria, Universitat Autònoma de Barcelona, Spain.",
+				fr: "Seminari de Geometria, Universitat Autònoma de Barcelona, Espagne.",
+				cat: "Seminari de Geometria, Universitat Autònoma de Barcelona, Espanya."
+			},
 		}];
+		
+		const EVENTS = [{
+			innerHTML: {
+				en: "Together with Nolwenn Le Quellec and Quentin Rible, we organise the <a href='http://lama.u-pem.fr/evenements/seminaire/seminaire_des_doctorants'> Séminaire des doctorants du LAMA</a>, a monthly seminar aimed at LAMA's PhD students.",
+				fr: "Ensemble avec Nolwenn Le Quellec et Quentin Rible, on organise le <a href='http://lama.u-pem.fr/evenements/seminaire/seminaire_des_doctorants'> Séminaire des doctorants du LAMA</a>, un séminaire mensuel pour les doctorants, ATER et post-doctorants du LAMA.",
+				cat: "Conjuntament amb Nolwenn Le Quellec i Quentin Rible, organitzem el <a href='http://lama.u-pem.fr/evenements/seminaire/seminaire_des_doctorants'> Séminaire des doctorants du LAMA</a>, un seminari mensual pels estudiants de doctorat, ATER i post-doctorands del LAMA.",
+			},
+		}];
+
+		const TEACHING = [{
+			semester: {
+				en: 'Spring 2024',
+				fr: 'Printemps 2024',
+				cat: 'Primavera 2024',
+			},
+			innerHTML: {
+				en: "Real Analysis 1, L1 Mathematics, Université Paris-Est Créteil (36h lectures).",
+				fr: "Analyse Réelle 1, L1 Mathématiques, Université Paris-Est Créteil (36h TD).",
+				cat: "Anàlisi real, L1 Matemàtiques, Université Paris-Est Créteil (36h problemes).",
+			}
+		}, {
+			semester: {
+				en: 'Autumn 2022',
+				fr: 'Automne 2022',
+				cat: 'Tardor 2022',
+			},
+			innerHTML: {
+				en: "Calculus 1, L1 Chemistry, Université Paris-Est Créteil, (30h lectures).",
+				fr: "Calculus 1, L1 Chimie, Université Paris-Est Créteil, (30h cours + TD).",
+				cat: "Càlcul 1, L1 Química, Université Paris-Est Créteil, (30h teoria + problemes).",
+			}
+		}];
+
+		const TITLES = {
+			HOME: {
+				en: 'Teo Gil Moreno de Mora Sardà',
+			},
+			RESEARCH: {
+				en: 'Research',
+				fr: 'Recherche',
+				cat: 'Recerca'
+			},
+			TEACHING: {
+				en: 'Teaching',
+				fr: 'Enseignement',
+				cat: 'Docència',
+			},
+			OTHERS: {
+				en: 'Others',
+				fr: 'Autres',
+				cat: 'Altres'
+			},
+		};
+
+		let currLang;
+		let currPage, currSubPage;
+		function t(txt) {
+			switch(currLang) {
+				case 'FR': {
+					return txt.fr || txt.en;
+				}
+				case 'CAT': {
+					return txt.cat || txt.en;
+				}
+				case 'EN':
+				default: {
+					return txt.en;
+				}
+			}
+		}
+
 	</script>
 	<style>
 		body {
-			font-family: Helvetica, Arial, sans-serif;
-			font-size: medium;
+			font-family: 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
 			text-align: justify;
 			background-color: rgb(255, 255, 255);
 		}
 		h1 {
-			text-align: center;
+			margin-top: 2%;
+			margin-left: 10%;
+			font-family: 'HelveticaNeue-Light',Helvetica, Arial, sans-serif;
+			text-align: left;
 		}
 		td {
 			text-align: left;
 			vertical-align: baseline;
 		}
 
+		div.navigationRow {
+			text-align: center;
+			background-color: rgb(102,0,0);
+		}
+		div.navigationSubRow {
+			text-align: center;
+			background-color: rgb(172,197,250);
+		}
 		button.navigationButton {
 			font-family: Helvetica, Arial, sans-serif;
 			font-size: medium;
-			border: 0;
+			color: white;
+			line-height: 2;
+			background: none;
+			border: none;
 		}
 		button.navigationButton.Current {
-			background-color: beige;
-			font-weight: bolder;
+			color: rgb(172,197,250);
 		}
 
+		button.languageButton {
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: medium;
+			color: rgb(102,0,0);
+			line-height: 2;
+			background: none;
+			border: none;
+		}
+		
 		section.navigationPage {
-			margin-left: 3%;
-			margin-right: 3%;
+			margin-top: 2%;
+			margin-left: 10%;
+			margin-right: 10%;
 		}
 		
 		td.cvListKey {
-			width: 17%;
+			width: 25%;
 		}
 		td.cvListKeyLong {
-			width: 38%;
+			width: 25%;
 		}
 		td.cvListDescription {
 			vertical-align: middle;
 		}
+		
+		a {
+			text-decoration: none;
+		}
+		a:link {
+			color: rgb(102,0,0);
+		}
+		a:visited {
+			color: rgb(102,0,0);
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		a:active {
+			color: rgb(80,0,0);
+		}
+
 	</style>
 </head>
 <body>
 
-<section id="navigator-controller">
-	<h1> Teo Gil Moreno de Mora Sardà </h1>
-	<p> En construction </p>
-	<table style="width: 100%">
-		<td style="text-align: left;">
-			<strong>Laboratoire d'Analyse et de Mathématiques Appliquées</strong><br>
-			Université Paris-Est Créteil<br>
-			61 avenue du Général de Gaulle<br>
-			94010 Créteil<br>
-			France
-		</td>
-		<td style="text-align: right;">
-			<strong>Departament de Matemàtiques</strong><br>
-			Universitat de Barcelona<br>
-			Facultat de Ciències<br>
-			08193 Bellaterra<br>
-			Spain
-		</td>
-	</table>
-	<div style="text-align: center;">
-		<button class="navigationButton"
-			id="homeNavigationButton"
-			onclick="navigateToPage(0)"
-			title="Home page"
-		>Home</button>
-		<button class="navigationButton"
-			id="researchNavigationButton"
-			onclick="navigateToPage(1)"
-			title="Research history (published papers and contributions)"
-		>Research</button>
-		<button class="navigationButton"
-			id="eventsNavigationButton"
-			onclick="navigateToPage(2)"
-			title="bla bla bla"
-		>Events</button>
-		<button class="navigationButton"
-			id="talksNavigationButton"
-			onclick="navigateToPage(3)"
-			title="bla bla bla"
-		>Talks</button>
-	</div>
-	<script>
-		function navigateToPage(clickedIdx) {
-			const format = (pageId, buttonId, active) => {
-				document.getElementById(pageId).hidden = !active;
-				const button = document.getElementById(buttonId);
-				if (button) {
-					button.className = "navigationButton" + (active ? " Current" : "");
-				}
-			}
-			format("placeholderPage", null, false);
-			format("homePage", "homeNavigationButton", clickedIdx === 0);
-			format("researchPage", "researchNavigationButton", clickedIdx === 1);
-			format("eventsPage", "eventsNavigationButton", clickedIdx === 2);
-			format("talksPage", "talksNavigationButton", clickedIdx === 3);
-		};
-	</script>
+
+<section style="background-color: white;">
+	<button class="languageButton" onclick="setGlobalLang('EN')">EN</button>
+	<button class="languageButton" onclick="setGlobalLang('FR')">FR</button>
+	<button class="languageButton" onclick="setGlobalLang('CAT')">CAT</button>
+	<script>function setGlobalLang (lang) {
+		currLang = lang;
+		handleOnClickButton(currPage);
+		handleOnClickSubButton(currPage, currSubPage);
+	}</script>
 </section>
 
+
+<section id="navigator-controller">
+	<h1 id="siteTitle"> Teo Gil Moreno de Mora Sardà (en construction)</h1>
+
+	<!-- Primary button menu for HOME / RESEARCH / TEACHING / OTHERS -->
+	<div class="navigationRow">
+		<button class="navigationButton"
+			id="homeNavigationButton"
+			onclick="handleOnClickButton(0)"
+			title="Home page"
+		>Home</button>
+		<span style="font-weight:bolder; color:white">
+			&#183;
+		</span>
+		<button class="navigationButton"
+			id="researchNavigationButton"
+			onclick="handleOnClickButton(1)"
+			title="Research, publications, talks and events"
+		>Research</button>
+		<span style="font-weight:bolder; color:white">
+			&#183;
+		</span>
+		<button class="navigationButton"
+			id="teachingNavigationButton"
+			onclick="handleOnClickButton(2)"
+			title="Teaching"
+		>Teaching</button>
+		<span style="font-weight:bolder; color:white">
+			&#183;
+		</span>
+		<button class="navigationButton"
+			id="teachingNavigationButton"
+			onclick="handleOnClickButton(3)"
+			title="Miscelaneous"
+		>Other</button>
+	</div>
+
+	<!-- Secondary row of buttons, for PLACEHOLDER -->
+	<div
+		id="placeholderNavigationSubmenu"
+		class="navigationSubRow"
+		style="background-color: white;"
+	>
+		<button class="navigationButton">A</button>
+	</div>
+
+	<!-- Secondary row of buttons, for RESEARCH -->
+	<div
+		class="navigationSubRow"
+		id="researchNavigationSubmenu"
+		hidden
+	>
+		<button class="navigationButton"
+			id="researchPublicationsNavigationButton"
+			title="Published papers and preprints"
+			onclick="handleOnClickSubButton(1, 0)"
+		>Publications</button>
+		<span style="font-weight:bolder; color:white">
+			&#183;
+		</span>
+		<button class="navigationButton"
+			id="researchTalksNavigationButton"
+			title="Talks given at seminars and conferences"
+			onclick="handleOnClickSubButton(1, 1)"
+		>Talks</button>
+		<span style="font-weight:bolder; color:white">
+			&#183;
+		</span>
+		<button class="navigationButton"
+			id="researchEventsNavigationButton"
+			title="Organisation of seminars and research activities"
+			onclick="handleOnClickSubButton(1, 2)"
+		>Events</button>
+	</div>
+
+	<!-- Secondary row of buttons, for OTHER -->
+	<div
+		id="othersNavigationSubmenu"
+		class="navigationSubRow"
+		hidden
+	>
+		<button class="navigationButton"
+			id="researchPublicationsNavigationButton"
+			title="A"
+			onclick="handleOnClickSubButton(3, 0)"
+		>A</button>
+		<span style="font-weight:bolder; color:white">
+			&#183;
+		</span>
+		<button class="navigationButton"
+			id="researchTalksNavigationButton"
+			title="B"
+			onclick="handleOnClickSubButton(3, 1)"
+		>B</button>
+	</div>
+
+	<script>
+		const PAGE_IDS = [
+			"placeholderPage",
+			"homePage",
+			"researchPage",
+			"eventsPage",
+			"talksPage",
+			"teachingPage",
+			"othersAPage",
+			"othersBPage",
+		];
+
+		function navigateToPage (targetPageId) {
+			PAGE_IDS.map(p => {
+				document.getElementById(p).hidden = (p !== targetPageId);
+			});
+		};
+
+		const SUB_BUTTON_ROW_IDS = [
+			"researchNavigationSubmenu",
+			"othersNavigationSubmenu",
+			"placeholderNavigationSubmenu",
+		];
+
+		function displaySubButtons (subButtonRowId = "placeholderNavigationSubmenu") {
+			SUB_BUTTON_ROW_IDS.map(r => {
+				document.getElementById(r).hidden = (r !== subButtonRowId);
+			});
+		};
+
+		function setSiteTitle (title) {
+			document.getElementById("siteTitle").innerHTML = t(title);
+		}
+
+		function handleOnClickButton(buttonIdx) {
+			currPage = buttonIdx;
+			switch (buttonIdx) {
+				case 0: {
+					navigateToPage("homePage");
+					setSiteTitle(TITLES.HOME);
+					displaySubButtons();
+					break;
+				}
+				case 1: {
+					renderResearch(RESEARCH);
+					navigateToPage("researchPage");
+					setSiteTitle(TITLES.RESEARCH);
+					displaySubButtons("researchNavigationSubmenu");
+					break;
+				}
+				case 2: {
+					renderTeaching(TEACHING);
+					navigateToPage("teachingPage");
+					setSiteTitle(TITLES.TEACHING);
+					displaySubButtons();
+					break;
+				}
+				case 3: {
+					navigateToPage("othersAPage");
+					setSiteTitle(TITLES.OTHERS);
+					displaySubButtons("othersNavigationSubmenu");
+					break;
+				}
+			}
+		};
+
+		function handleOnClickSubButton(buttonIdx, subButtonIdx) {
+			currSubPage = subButtonIdx;
+			switch (buttonIdx) {
+				case 0: {
+					break;
+				}
+				case 1: {
+					switch (subButtonIdx) {
+						case 0: {
+							renderResearch(RESEARCH);
+							navigateToPage("researchPage");
+							break;
+						}
+						case 1: {
+							renderTalks(CONFERENCE_TALKS, SEMINAR_TALKS);
+							navigateToPage("talksPage");
+							break;
+						}
+						case 2: {
+							renderEvents(EVENTS);
+							navigateToPage("eventsPage");
+							break;
+						}
+					}
+					break;
+				}
+				case 2: {
+					break;
+				}
+				case 3: {
+					switch (subButtonIdx) {
+						case 0: {
+							navigateToPage("othersAPage");
+							break;
+						}
+						case 1: {
+							navigateToPage("othersBPage");
+							break;
+						}
+					}
+					break;
+				}
+			}
+		};
+	</script>
+
+</section>
 
 <section id="placeholderPage" class="navigationPage">
 	<i>Loading content...</i>
 </section>
 
 <section id="homePage" class="navigationPage" hidden>
-	<h2>About me</h2>
 	I am a second year PhD student at <a href = 'http://lama.u-pem.fr'>Laboratoire d'Analyse et de Mathématiques Appliquées</a> at Université Paris-Est Créteil and at the Universitat Autònoma de Barcelona, under the supervision of <a href='https://perso.math.u-pem.fr/sabourau.stephane/'> Stéphane Sabourau</a> and <a href='https://mat.uab.cat/~fbalacheff/'>Florent Balacheff</a>.
+	<br>
+	<br>
+	<table style="width: 100%">
+		<td style="text-align: left;">
+			Laboratoire d'Analyse et de Mathématiques Appliquées<br>
+			Université Paris-Est Créteil<br>
+			61 avenue du Général de Gaulle<br>
+			94010 Créteil<br>
+			France<br>
+			<br>
+			teo.gil-moreno-de-mora-i-sarda [at] u-pec.fr
+		</td>
+		<td style="text-align: left;">
+			Departament de Matemàtiques<br>
+			Universitat de Barcelona<br>
+			Facultat de Ciències<br>
+			08193 Bellaterra<br>
+			Spain<br>
+			<br>
+			teo.gil [at] autonoma.cat
+		</td>
+	</table>
 </section>
 
 <section id="researchPage" class="navigationPage" hidden>
-	<h2>Research page</h2>
 	<table id="researchContentTable"></table>
 	<script>
 		function renderResearch (items) {
 			const target = document.getElementById("researchContentTable");
-			items.forEach(({ innerHTML }, idx) => {
+			target.innerHTML = '';
+			items.forEach(({ innerHTML, innerHTML_FR, innerHTML_CAT }, idx) => {
 				const row = document.createElement('tr');
 				const col0 = document.createElement('td', {
 					className: 'cvListKey',
@@ -154,7 +499,7 @@
 				const col1 = document.createElement('td', {
 					className: 'cvListDescription',
 				});
-				col1.innerHTML = innerHTML;				
+				col1.innerHTML = t(innerHTML);				
 				row.appendChild(col1);
 				target.appendChild(row);
 			});
@@ -163,15 +508,31 @@
 </section>
 
 <section id="eventsPage" class="navigationPage" hidden>
-	<h2>Events page</h2>
-	Together with Nolwenn Le Quellec and Quentin Rible, we organise the 
-	<a href='http://lama.u-pem.fr/evenements/seminaire/seminaire_des_doctorants'>
-	Séminaire des doctorants du LAMA</a>, a monthly seminar aimed at LAMA's PhD
-	students
+	<h3>Organised events</h3>
+	<table id="eventsTable"></table>
+	<script>
+		function renderEvents (items) {
+			const target = document.getElementById("eventsTable");
+			target.innerHTML = '';
+			items.forEach(({ innerHTML, innerHTML_FR, innerHTML_CAT }, idx) => {
+				const row = document.createElement('tr');
+				const col0 = document.createElement('td', {
+					className: 'cvListKey',
+				});
+				col0.innerHTML = `&#183;`;
+				row.appendChild(col0);
+				const col1 = document.createElement('td', {
+					className: 'cvListDescription',
+				});
+				col1.innerHTML = t(innerHTML);				
+				row.appendChild(col1);
+				target.appendChild(row);
+			});
+		};
+	</script>
 </section>
 
 <section id="talksPage" class="navigationPage" hidden>
-	<h2>Talks page</h2>
 	<h3>Talks in conferences</h3>
 	<table id="talksInConferencesList"></table>
 	<h3>Seminar talks</h3>
@@ -180,16 +541,17 @@
 		function renderTalks(inConferences, inSeminar) {
 
 			const renderList = (target, items) => {
-				items.forEach(({ date, innerHTML }, idx) => {
+				target.innerHTML = '';
+				items.forEach(({ date, dateKey, innerHTML }, idx) => {
 					const row = document.createElement('tr');
 					const col0 = document.createElement('td');
 					col0.className = 'cvListKey Long';
-					//const upcoming = (new Date(date)) > Date.now();
-					col0.innerHTML = date; // + (upcoming ? " (upcoming)" : "");
+					const upcoming = Date.parse(dateKey) > Date.now();
+					col0.innerHTML = (t(date) || dateKey) + (upcoming ? " (upcoming)" : "");
 					row.appendChild(col0);
 					const col1 = document.createElement('td');
 					col1.className = 'cvListDescription';
-					col1.innerHTML = innerHTML;				
+					col1.innerHTML = t(innerHTML);				
 					row.appendChild(col1);
 					target.appendChild(row);
 				});
@@ -207,11 +569,39 @@
 	</script>
 </section>
 
+<section id="teachingPage" class="navigationPage" hidden>
+	<table id="teachingTable"></table>
+	<script>
+		function renderTeaching (items) {
+			const target = document.getElementById("teachingTable");
+			target.innerHTML = '';
+			items.forEach(({ semester, innerHTML }, idx) => {
+				const row = document.createElement('tr');
+				const col0 = document.createElement('td', {
+					className: 'cvListKey Long',
+				});
+				col0.innerHTML = t(semester);
+				row.appendChild(col0);
+				const col1 = document.createElement('td', {
+					className: 'cvListDescription',
+				});
+				col1.innerHTML = t(innerHTML);				
+				row.appendChild(col1);
+				target.appendChild(row);
+			});
+		};
+	</script>
+</section>
+
+<section id="othersAPage" class="navigationPage" hidden>ngitoj rjiogr ejreo j 34t34</section>
+
+<section id="othersBPage" class="navigationPage" hidden>jt549t t589 g9 g54u g</section>
+
+
+<!-- <div style="position: absolute; bottom: 0; text-align: center; width: 100vw;">Siempre abaho</div> -->
+
 <script>
-	/* load and render everything and go to homepage */
-	renderResearch(RESEARCH);
-	renderTalks(CONFERENCE_TALKS, SEMINAR_TALKS);
-	navigateToPage(0);
+	handleOnClickButton(0);
 </script>
 
 </body>
