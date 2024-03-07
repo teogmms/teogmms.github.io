@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title> Teo Gil Moreno de Mora Sardà </title>
+	<link rel="icon" type="image/png" href="/Images/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta charset = utf-8>
 	<script>
 		/* Here we define the data */
@@ -9,8 +11,8 @@
 		const RESEARCH = [{
 			innerHTML: {
 				en: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>With F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
-				fr: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>With F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
-				cat: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>With F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
+				fr: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>Avec F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
+				cat: '<a href=Publications/IsosystolicInequalitiesOnTwoDimensionalTori.pdf>Isosystolic inequalities on two-dimensional tori.</a><br>Amb F. Balacheff<br>EMS Surv. Math. Sci, to appear. <br>',
 			},
 		}];
 
@@ -279,7 +281,14 @@
 </head>
 <body>
 
-
+<img 
+	id="siteImage"
+	src="Images/portrait.png"
+	alt="Teo Gil Moreno de Mora Sardà"
+	style="float: right;
+			margin-top: 1px;
+			margin-right: 10%;
+			  height:150px;">
 <section style="background-color: white;">
 	<button class="languageButton" onclick="setGlobalLang('EN')">EN</button>
 	<button class="languageButton" onclick="setGlobalLang('FR')">FR</button>
@@ -293,7 +302,7 @@
 
 
 <section id="navigator-controller">
-	<h1 id="siteTitle"> Teo Gil Moreno de Mora Sardà (en construction)</h1>
+	<h1 id="siteTitle" style="margin-top: 90px;"> Teo Gil Moreno de Mora Sardà</h1>
 
 	<!-- Primary button menu for HOME / RESEARCH / TEACHING / OTHERS -->
 	<div class="navigationRow">
@@ -499,6 +508,8 @@
 		};
 	</script>
 
+	<section id
+
 </section>
 
 <section id="placeholderPage" class="navigationPage">
@@ -517,6 +528,7 @@
 			94010 Créteil<br>
 			France<br>
 			<br>
+			<i class="fa fa-envelope", style="color:rgb(102,0,0);"></i>
 			teo.gil-moreno-de-mora-i-sarda [at] u-pec.fr
 		</td>
 		<td style="text-align: left;">
@@ -526,12 +538,14 @@
 			08193 Bellaterra<br>
 			Spain<br>
 			<br>
+			<i class="fa fa-envelope", style="color:rgb(102,0,0);"></i>
 			teo.gil [at] autonoma.cat
 		</td>
 	</table>
 </section>
 
 <section id="researchPage" class="navigationPage" hidden>
+	<h3>Publications</h3>
 	<table id="researchContentTable"></table>
 	<script>
 		function renderResearch (items) {
@@ -618,6 +632,7 @@
 </section>
 
 <section id="teachingPage" class="navigationPage" hidden>
+	<h3>Teaching</h3>
 	<table id="teachingTable"></table>
 	<script>
 		function renderTeaching (items) {
