@@ -143,7 +143,7 @@
 				cat: 'Docència'
 			},
 			OTHERS: {
-				en: 'Others',
+				en: 'Other',
 				fr: 'Autres',
 				cat: 'Altres'
 			},
@@ -238,7 +238,6 @@
 		button.navigationButton.Current {
 			color: rgb(172,197,250);
 		}
-
 		button.languageButton {
 			font-family: Helvetica, Arial, sans-serif;
 			font-size: medium;
@@ -248,7 +247,7 @@
 			border: none;
 			cursor:pointer
 		}
-		
+
 		section.navigationPage {
 			margin-top: 2%;
 			margin-left: 10%;
@@ -283,11 +282,13 @@
 
 	</style>
 </head>
-<body>
 
+
+<body>
+<!--Header of website-->
 <img 
-	id="siteImage"
-	src="Images/portrait.PNG"
+	id="headerImage"
+	src="Images/portrait.png"
 	alt="Teo Gil Moreno de Mora Sardà"
 	style="float: right;
 			margin-top: 1px;
@@ -389,15 +390,15 @@
 			id="seedbeedNavigationButton"
 			title="One example that I like of each class"
 			onclick="handleOnClickSubButton(3, 0)"
-		>Seedbed</button>
+		>Math links</button>
 		<span style="font-weight:bolder; color:white">
 			&#183;
 		</span>
 		<button class="navigationButton"
-			id="bNavigationButton"
-			title="B"
+			id="One example that I like of each class"
+			title=""
 			onclick="handleOnClickSubButton(3, 1)"
-		>B</button>
+		>Seedbed</button>
 	</div>
 
 	<script>
@@ -408,8 +409,8 @@
 			"eventsPage",
 			"talksPage",
 			"teachingPage",
-			"othersAPage",
-			"othersBPage",
+			"mathlinksPage",
+			"seedbedPage",
 		];
 
 		function navigateToPage (targetPageId) {
@@ -430,36 +431,36 @@
 			});
 		};
 
-		function setSiteTitle (title) {
+		function setTitle (title) {
 			document.getElementById("siteTitle").innerHTML = t(title);
-		}
+		};
 
 		function handleOnClickButton(buttonIdx) {
 			currPage = buttonIdx;
 			switch (buttonIdx) {
 				case 0: {
 					navigateToPage("homePage");
-					setSiteTitle(TITLES.HOME);
+					setTitle(TITLES.HOME);
 					displaySubButtons();
 					break;
 				}
 				case 1: {
 					renderResearch(RESEARCH);
 					navigateToPage("researchPage");
-					setSiteTitle(TITLES.RESEARCH);
+					setTitle(TITLES.RESEARCH);
 					displaySubButtons("researchNavigationSubmenu");
 					break;
 				}
 				case 2: {
 					renderTeaching(TEACHING);
 					navigateToPage("teachingPage");
-					setSiteTitle(TITLES.TEACHING);
+					setTitle(TITLES.TEACHING);
 					displaySubButtons();
 					break;
 				}
 				case 3: {
-					navigateToPage("othersAPage");
-					setSiteTitle(TITLES.OTHERS);
+					navigateToPage("mathlinksPage");
+					setTitle(TITLES.OTHERS);
 					displaySubButtons("othersNavigationSubmenu");
 					break;
 				}
@@ -498,11 +499,11 @@
 				case 3: {
 					switch (subButtonIdx) {
 						case 0: {
-							navigateToPage("othersAPage");
+							navigateToPage("mathlinksPage");
 							break;
 						}
 						case 1: {
-							navigateToPage("othersBPage");
+							navigateToPage("seedbedPage");
 							break;
 						}
 					}
@@ -511,9 +512,6 @@
 			}
 		};
 	</script>
-
-	<section id
-
 </section>
 
 <section id="placeholderPage" class="navigationPage">
@@ -521,8 +519,7 @@
 </section>
 
 <section id="homePage" class="navigationPage" hidden>
-	I am a second year PhD student at <a href = 'http://lama.u-pem.fr'>Laboratoire d'Analyse et de Mathématiques Appliquées</a> at Université Paris-Est Créteil and at the Universitat Autònoma de Barcelona, under the supervision of <a href='https://perso.math.u-pem.fr/sabourau.stephane/'> Stéphane Sabourau</a> and <a href='https://mat.uab.cat/~fbalacheff/'>Florent Balacheff</a>.
-	<br>
+	<p>I am a second year PhD student at <a href = 'http://lama.u-pem.fr'>Laboratoire d'Analyse et de Mathématiques Appliquées</a> at Université Paris-Est Créteil and at the Universitat Autònoma de Barcelona, under the supervision of <a href='https://perso.math.u-pem.fr/sabourau.stephane/'> Stéphane Sabourau</a> and <a href='https://mat.uab.cat/~fbalacheff/'>Florent Balacheff</a>.</p>
 	<br>
 	<table style="width: 100%">
 		<td style="text-align: left;">
@@ -546,6 +543,15 @@
 			teo.gil [at] autonoma.cat
 		</td>
 	</table>
+
+	<div style="position: absolute; bottom: 5%; text-align: center;width: 80%;">
+		<a href="https://arxiv.org/a/gilmorenodemorasarda_t_1.html">
+			<img alt="arXiv logo" src="https://public.boxcloud.com/api/2.0/internal_files/774935251410/versions/832363006815/representations/png_paged_2048x2048/content/1.png?access_token=1!y4LkblgmuBftgMs6-zyKt_bSqxNCUenRGsgbGX2pFVZ0dU_tpuzBlPR7advFBASAHYPaxKtxPlphGnoekQnnxlAgw1ZjJwA480z1_qKTYnWZKZz20WH6nu4O_gNsKHbnSriosvD4S1VzkaxEwj8XP0m6_LDBXB44hLX2WYojZ3YL_9Ct9f8KK4zgKpmvW92_kwyhrO5S5XiLY5KQfR1JD9kGRRVmQO9SCpCTFukZW0lN6sw0xLsf4JX0Khx9WMiynsG5x31Bp0m2Cg-XujwnZtKs5Fsu7-u_R4GGWd9B0HZDRgOloknNV2gYUtefaRD2Jpj4UNVHFIMOxEy2PMc_X5iaOgXw5iKCnnGCUnvtY9fk7MZrlEtwTLrqr7BdGcewdULfq7aVQlGMTVXjAzn8cg3OlScfuK3muMqnhZlYvdFBd2y9HTIy2XeqEK5h8RYcdJP5qG14QBskZU5Hr1kp-VU3R9GMlXjQqDWMoWqjXTzN4zTZWtflpaf6kMvTIhwxlcl0URF2ItrF-qOSKqryxrZd0jxHVNJNLR7Cv-B9imN0LNpjlkzTaiAWAxrr98yTTgel&shared_link=https%3A%2F%2Fcornell.app.box.com%2Fv%2Farxiv-logo-assets&box_client_name=box-content-preview&box_client_version=2.102.0" height="20" />
+		</a>
+		<a href="https://orcid.org/0009-0003-9464-1107">
+			<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_64x64.png" width="20" height="20" />
+		</a>
+	</div>
 </section>
 
 <section id="researchPage" class="navigationPage" hidden>
@@ -660,9 +666,22 @@
 	</script>
 </section>
 
-<section id="othersAPage" class="navigationPage" hidden>ngitoj rjiogr ejreo j 34t34</section>
+<section id="mathlinksPage" class="navigationPage" hidden>
+	<p>Some sites about mathematics in which I am interested:</p>
+	<ul>
+		<li><a href="https://hevea-project.fr/index.html">Projet Hévéa</a>.</li>
+	</ul>
+</section>
 
-<section id="othersBPage" class="navigationPage" hidden>jt549t t589 g9 g54u g</section>
+<section id="seedbedPage" class="navigationPage" hidden>
+	<p>One example of each class that I have been enjoying lately:</p>
+	<ul>
+		<li>A song<br>
+			<br>
+			<iframe width="400" height="225" src="https://www.youtube.com/embed/lNuEV9PzQMA?si=Uhr7xR9Y_SXwLZq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		</li>
+	</ul>
+</section>
 
 
 <!-- <div style="position: absolute; bottom: 0; text-align: center; width: 100vw;">Siempre abaho</div> -->
