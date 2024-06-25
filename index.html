@@ -128,9 +128,9 @@
 			},
 			dateKey: '2024 Jun 24',
 			innerHTML: {
-				en: "<a href='http://imag.ugr.es/esdg/'>European Doctorate School of Differential Geometry</a>, Instituo de Matemáticas de la Universidad de Granada, Spain.",
-				fr: "<a href='http://imag.ugr.es/esdg/'>European Doctorate School of Differential Geometry</a>, Instituo de Matemáticas de la Universidad de Granada, Espagne.",
-				cat: "<a href='http://imag.ugr.es/esdg/'>European Doctorate School of Differential Geometry</a>, Instituo de Matemáticas de la Universidad de Granada, Espanya.",
+				en: "<a href='http://imag.ugr.es/esdg/'>European Doctorate School of Differential Geometry</a>, Instituto de Matemáticas de la Universidad de Granada, Spain. [<a href="Posters/PosterGranada.pdf">poster</a>]",
+				fr: "<a href='http://imag.ugr.es/esdg/'>European Doctorate School of Differential Geometry</a>, Instituto de Matemáticas de la Universidad de Granada, Espagne. [<a href="Posters/PosterGranada.pdf">poster</a>]",
+				cat: "<a href='http://imag.ugr.es/esdg/'>European Doctorate School of Differential Geometry</a>, Instituto de Matemáticas de la Universidad de Granada, Espanya. [<a href="Posters/PosterGranada.pdf">poster</a>]",
 			}
 		}];
 		
@@ -523,7 +523,7 @@
 							break;
 						}
 						case 1: {
-							renderTalks(CONFERENCE_TALKS, SEMINAR_TALKS);
+							renderTalks(CONFERENCE_TALKS, SEMINAR_TALKS, POSTER_TALKS);
 							navigateToPage("talksPage");
 							break;
 						}
@@ -656,7 +656,7 @@
 	<h3>Seminar talks</h3>
 	<table id="talksInSeminarList"></table>
 	<h3>Posters</h3>
-	<table id="talksInPosters"></table>
+	<table id="talksInPostersList"></table>
 	<script>
 		function renderTalks(inConferences, inSeminar, inPosters) {
 
@@ -686,7 +686,7 @@
 				inSeminar,
 			);
 			renderList(
-				document.getElementById("talksInPosters"),
+				document.getElementById("talksInPostersList"),
 				inPosters,
 			);
 		};
