@@ -14,9 +14,15 @@
 
 		const RESEARCH = [{
 			innerHTML: {
-				en: '<a href="https://ems.press/journals/emss/articles/14297786">Isosystolic inequalities on two-dimensional tori.</a><br>With <a href="https://mat.uab.cat/~fbalacheff/">Florent Balacheff</a> <br>EMS Surv. Math. Sci. (2024), published online first [<a href="https://arxiv.org/abs/2201.05010">arXiv version</a>]<br>',
-				fr: '<a href="https://ems.press/journals/emss/articles/14297786">Isosystolic inequalities on two-dimensional tori.</a><br>Avec <a href="https://mat.uab.cat/~fbalacheff/">Florent Balacheff</a> <br>EMS Surv. Math. Sci. (2024), published online first [<a href="https://arxiv.org/abs/2201.05010">arXiv version</a>]<br>',
-				cat: '<a href="https://ems.press/journals/emss/articles/14297786">Isosystolic inequalities on two-dimensional tori.</a><br>Amb <a href="https://mat.uab.cat/~fbalacheff/">Florent Balacheff</a> <br>EMS Surv. Math. Sci. (2024), published online first [<a href="https://arxiv.org/abs/2201.05010">arXiv version</a>]<br>',
+				en: '<a href="https://arxiv.org/abs/2407.07198">Complete 3-manifolds of positive scalar curvature with quadratic decay.</a><br>With <a href="https://mat.uab.cat/~fbalacheff/">Florent Balacheff</a> and <a href="https://perso.math.u-pem.fr/sabourau.stephane/"> Stéphane Sabourau</a> <br>Preprint arXiv (2024)<br><br>',
+				fr: '<a href="https://arxiv.org/abs/2407.07198">Complete 3-manifolds of positive scalar curvature with quadratic decay.</a><br>Avec <a href="https://mat.uab.cat/~fbalacheff/">Florent Balacheff</a> et <a href="https://perso.math.u-pem.fr/sabourau.stephane/"> Stéphane Sabourau</a> <br>Preprint arXiv (2024)<br><br>',
+				cat: '<a href="https://arxiv.org/abs/2407.07198">Complete 3-manifolds of positive scalar curvature with quadratic decay.</a><br>Amb <a href="https://mat.uab.cat/~fbalacheff/">Florent Balacheff</a> i <a href="https://perso.math.u-pem.fr/sabourau.stephane/"> Stéphane Sabourau</a> <br>Preprint arXiv (2024)<br><br>',
+			}
+		},{
+			innerHTML: {
+				en: '<a href="https://ems.press/journals/emss/articles/14297786">Isosystolic inequalities on two-dimensional tori.</a><br>With <a href="https://mat.uab.cat/~fbalacheff/">Florent Balacheff</a> <br>EMS Surv. Math. Sci. (2024), published online first [<a href="https://arxiv.org/abs/2201.05010">arXiv version</a>]<br><br>',
+				fr: '<a href="https://ems.press/journals/emss/articles/14297786">Isosystolic inequalities on two-dimensional tori.</a><br>Avec <a href="https://mat.uab.cat/~fbalacheff/">Florent Balacheff</a> <br>EMS Surv. Math. Sci. (2024), published online first [<a href="https://arxiv.org/abs/2201.05010">arXiv version</a>]<br><br>',
+				cat: '<a href="https://ems.press/journals/emss/articles/14297786">Isosystolic inequalities on two-dimensional tori.</a><br>Amb <a href="https://mat.uab.cat/~fbalacheff/">Florent Balacheff</a> <br>EMS Surv. Math. Sci. (2024), published online first [<a href="https://arxiv.org/abs/2201.05010">arXiv version</a>]<br><br>',
 			},
 		}];
 
@@ -128,9 +134,9 @@
 			},
 			dateKey: '2024 Jun 24',
 			innerHTML: {
-				en: "<a href='http://imag.ugr.es/esdg/'>European Doctorate School of Differential Geometry</a>, Instituto de Matemáticas de la Universidad de Granada, Spain.",
-				fr: "<a href='http://imag.ugr.es/esdg/'>European Doctorate School of Differential Geometry</a>, Instituto de Matemáticas de la Universidad de Granada, Espagne.",
-				cat: "<a href='http://imag.ugr.es/esdg/'>European Doctorate School of Differential Geometry</a>, Instituto de Matemáticas de la Universidad de Granada, Espanya.",
+				en: '<a href="http://imag.ugr.es/esdg/">European Doctorate School of Differential Geometry</a>, Instituto de Matemáticas de la Universidad de Granada, Spain. [<a href="Posters/PosterGranada.pdf">poster</a>]',
+				fr: '<a href="http://imag.ugr.es/esdg/">European Doctorate School of Differential Geometry</a>, Instituto de Matemáticas de la Universidad de Granada, Espagne. [<a href="Posters/PosterGranada.pdf">poster</a>]',
+				cat: '<a href="http://imag.ugr.es/esdg/">European Doctorate School of Differential Geometry</a>, Instituto de Matemáticas de la Universidad de Granada, Espanya. [<a href="Posters/PosterGranada.pdf">poster</a>]',
 			}
 		}];
 		
@@ -612,7 +618,7 @@
 				const col0 = document.createElement('td', {
 					className: 'cvListKey',
 				});
-				col0.innerHTML = `[${idx+1}]`;
+				col0.innerHTML = `[${2-idx}]`;
 				row.appendChild(col0);
 				const col1 = document.createElement('td', {
 					className: 'cvListDescription',
